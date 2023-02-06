@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: element-service
+    description:
+
+  data:
+    mongodb:
+      uri: "mongodb://localhost:27017"
+      database: element-service-db
+      host: localhost
+      port: 27017
+server:
+  port: 8085
