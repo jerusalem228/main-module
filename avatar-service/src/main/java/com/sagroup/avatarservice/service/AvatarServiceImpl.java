@@ -1,7 +1,7 @@
 package com.sagroup.avatarservice.service;
 
 import com.sagroup.avatarservice.entity.Avatar;
-import com.sagroup.avatarservice.repostory.AvatarRepository;
+import com.sagroup.avatarservice.repository.AvatarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
