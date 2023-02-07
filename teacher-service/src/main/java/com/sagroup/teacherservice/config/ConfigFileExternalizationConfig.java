@@ -15,13 +15,9 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.*;
 
-//configuration file for the project initialization
-//@author Naod
-//
-//
 
 /**
- * @Author
+ * @Author Naod
  * @version
  * @since
  */
