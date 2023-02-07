@@ -1,6 +1,6 @@
 spring:
   application:
-    name: school-service
+    name: reward-service
     description:
 
   data:

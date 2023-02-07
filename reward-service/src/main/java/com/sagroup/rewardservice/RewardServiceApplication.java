@@ -1,16 +1,19 @@
 package com.sagroup.rewardservice;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
 
 import com.sagroup.rewardservice.config.ConfigFileExternalizationConfig;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
+@OpenAPIDefinition
+@EnableJpaRepositories(basePackages = "com.sagroup.rewardservice")
 public class RewardServiceApplication {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(RewardServiceApplication.class);
