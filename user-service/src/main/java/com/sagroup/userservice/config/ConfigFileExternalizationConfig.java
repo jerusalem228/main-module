@@ -27,7 +27,7 @@ public class ConfigFileExternalizationConfig {
     public static final int CONFIG_FILES_CREATED_STATE = 1;
     public static final int CONFIG_FILES_ERROR_STATE = 2;
 
-    private static final String DOSSIER_CONFIG = ".swa-project-avatar" + File.separator + "conf";
+    private static final String DOSSIER_CONFIG = ".swa-project-user" + File.separator + "conf";
 
     public ConfigFileExternalizationConfig() {
 
