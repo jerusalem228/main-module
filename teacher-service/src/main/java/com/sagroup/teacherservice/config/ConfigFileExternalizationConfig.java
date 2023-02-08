@@ -15,6 +15,12 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.*;
 
+
+/**
+ * @Author Naod
+ * @version
+ * @since
+ */
 @Slf4j
 @Configuration
 public class ConfigFileExternalizationConfig {
@@ -22,8 +28,8 @@ public class ConfigFileExternalizationConfig {
     public static final int CONFIG_FILES_CREATED_STATE = 1;
     public static final int CONFIG_FILES_ERROR_STATE = 2;
 
-    private static final String DOSSIER_CONFIG = ".swa-project-teacher" + File.separator + "conf";
-
+//    private static final String DOSSIER_CONFIG = ".swa-project-teacher" + File.separator + "conf";
+    private static final String DOSSIER_CONFIG = ".swa-project-teachers" + File.separator + "conf";
     public ConfigFileExternalizationConfig() {
 
     }
