@@ -11,3 +11,7 @@ spring:
       port: 27017
 server:
   port: 8085
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
