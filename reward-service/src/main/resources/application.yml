@@ -2,21 +2,28 @@ spring:
   application:
     name: reward-service
     description:
+#  datasource:
+#    database: reward_service_db
+#    hostname: ${POSTGRES_HOST:localhost}
+#    port: ${POSTGRES_PORT:5432}
+#    username: ${POSTGRES_USER:khoffy}
+#    password: ${POSTGRES_PASSWD:SwaY890}
+#    url: jdbc:postgresql://${spring.datasource.hostname}:${spring.datasource.port}/${spring.datasource.database}
+#  initialization-mode: always
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    database: postgresql
+
   datasource:
-    database: reward_service_db
-    hostname: ${POSTGRES_HOST:localhost}
-    port: ${POSTGRES_PORT:5432}
-    username: ${POSTGRES_USER:khoffy}
-    password: ${POSTGRES_PASSWD:SwaY890}
-    url: jdbc:postgresql://${spring.datasource.hostname}:${spring.datasource.port}/${spring.datasource.database}
-  initialization-mode: always
-  jpa:
-    hibernate:
-      ddl-auto: create
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    database: postgresql
+    url: jdbc:h2:mem:reward_service_db
+  h2:
+    console:
+      enabled: true
+
 #  data:
 #    mongodb:
 #      uri: "mongodb://localhost:27017"
