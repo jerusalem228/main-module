@@ -1,4 +1,4 @@
-package com.sagroup.avatarservice;
+package com.sagroup.userservice;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,21 +7,21 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
 
-import com.sagroup.avatarservice.config.ConfigFileExternalizationConfig;
+import com.sagroup.userservice.config.ConfigFileExternalizationConfig;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @SpringBootApplication
-@EnableMongoRepositories("com.sagroup.avatarservice.repository")
-public class AvatarServiceApplication {
+@EnableMongoRepositories("com.sagroup.userservice.repository")
+public class UserServiceApplication {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(AvatarServiceApplication.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceApplication.class);
 
 	public static void main(String[] args) {
 
 		if (ConfigFileExternalizationConfig.createConfigFiles()
 				!= ConfigFileExternalizationConfig.CONFIG_FILES_ERROR_STATE) {
 			ConfigurableApplicationContext app = new SpringApplicationBuilder(
-				AvatarServiceApplication.class)
+				UserServiceApplication.class)
 					.build().run(ConfigFileExternalizationConfig.enhanceArgs(args));
 			Environment env = app.getEnvironment();
 			String protocol = "http";
