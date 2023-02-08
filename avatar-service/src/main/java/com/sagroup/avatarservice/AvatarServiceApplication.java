@@ -9,8 +9,10 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
 
 import com.sagroup.avatarservice.config.ConfigFileExternalizationConfig;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @SpringBootApplication
+@EnableMongoRepositories("com.sagroup.avatarservice.repository")
 public class AvatarServiceApplication {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(AvatarServiceApplication.class);
