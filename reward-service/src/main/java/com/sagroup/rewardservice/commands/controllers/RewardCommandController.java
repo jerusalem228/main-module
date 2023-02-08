@@ -1,19 +1,20 @@
 package com.sagroup.rewardservice.commands.controllers;
 
 import com.sagroup.rewardservice.commonapi.commands.CreateRewardCommand;
+import com.sagroup.rewardservice.commonapi.commands.DeleteRewardCommand;
+import com.sagroup.rewardservice.commonapi.commands.UpdateRewardCommand;
 import com.sagroup.rewardservice.commonapi.dtos.RewardDto;
-import com.sagroup.rewardservice.queries.entities.Reward;
+import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.eventsourcing.eventstore.EventStore;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Stream;
 
+@Slf4j
 @RestController
 @RequestMapping(path = "/commands/reward")
 public class RewardCommandController {
@@ -24,14 +25,43 @@ public class RewardCommandController {
     @PostMapping(path = "/create")
     public CompletableFuture<String> createReward(@RequestBody RewardDto rewardDto) {
         CompletableFuture<String> commandResponse = commandGateway.send(new CreateRewardCommand(
-                UUID.randomUUID().toString(),
+                        UUID.randomUUID().toString(),
+                        rewardDto.getName(),
+                        rewardDto.getQuantity(),
+                        rewardDto.getRewardType().toString(),
+                        rewardDto.getPrice()
+                )
+        );
+        return commandResponse;
+    }
+
+    @PutMapping("/update")
+    public CompletableFuture<String> updateReward(@RequestBody RewardDto rewardDto) {
+        log.info("***************************************************");
+        log.info("Update method from RewardCommandController");
+        CompletableFuture<String> commandResponse = commandGateway.send(new UpdateRewardCommand(
+                rewardDto.getRewardId(),
                 rewardDto.getName(),
                 rewardDto.getQuantity(),
                 rewardDto.getRewardType().toString(),
                 rewardDto.getPrice()
-                )
-        );
+        ));
         return commandResponse;
+    }
+
+    @DeleteMapping("/{rewardId}")
+    public CompletableFuture<String> deleteReward(@PathVariable String rewardId) {
+        log.info("***************************************************");
+        log.info("Delete method from RewardCommandController");
+        CompletableFuture<String> commandResponse = commandGateway.send(new DeleteRewardCommand(
+                rewardId
+        ));
+        return commandResponse;
+    }
+
+    @GetMapping("/eventStore/{rewardId}")
+    public Stream eventStore(@PathVariable String rewardId) {
+        return eventStore.readEvents(rewardId).asStream();
     }
 
     @Autowired

@@ -1,9 +1,8 @@
-package com.sagroup.rewardservice.commonapi.commands;
+package com.sagroup.rewardservice.commonapi.events;
 
 import lombok.Getter;
 
-public class UpdateRewardCommand extends BaseCommand<String> {
-
+public class RewardUpdatedEvent extends BaseEvent<String> {
     @Getter
     private String name;
 
@@ -12,9 +11,11 @@ public class UpdateRewardCommand extends BaseCommand<String> {
 
     @Getter
     private String rewardType;
+
     @Getter
     private int price;
-    public UpdateRewardCommand(String id, String name, int quantity, String rewardType, int price) {
+
+    public RewardUpdatedEvent(String id,  String name, int quantity, String rewardType, int price) {
         super(id);
         this.name = name;
         this.quantity = quantity;
