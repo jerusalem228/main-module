@@ -13,6 +13,7 @@ import com.sagroup.elementservice.config.ConfigFileExternalizationConfig;
 
 @SpringBootApplication
 @OpenAPIDefinition
+
 public class ElementServiceApplication {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ElementServiceApplication.class);

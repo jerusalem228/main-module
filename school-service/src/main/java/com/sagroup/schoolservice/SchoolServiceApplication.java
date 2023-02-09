@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
 
@@ -11,6 +12,7 @@ import com.sagroup.schoolservice.config.ConfigFileExternalizationConfig;
 
 
 @SpringBootApplication
+@EnableDiscoveryClient
 public class SchoolServiceApplication {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(SchoolServiceApplication.class);

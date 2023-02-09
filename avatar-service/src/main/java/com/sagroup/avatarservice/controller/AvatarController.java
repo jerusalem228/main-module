@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/avatarts")
+@RequestMapping("/avatars")
 public class AvatarController {
     @Autowired
     private AvatarService avatarService;

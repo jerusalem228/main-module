@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 
 @Slf4j
 @RestController
-@RequestMapping(path = "/commands/reward")
+@RequestMapping(path = "/commands/rewards")
 public class RewardCommandController {
 
     private CommandGateway commandGateway;
