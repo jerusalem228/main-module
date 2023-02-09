@@ -14,7 +14,6 @@ public class AvatarController {
     private AvatarService avatarService;
     @GetMapping("/view")
     public List<Avatar> viewAll(){
-
         return avatarService.viewAll();
     }
     @PostMapping("/save")

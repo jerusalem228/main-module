@@ -2,6 +2,7 @@ package com.sagroup.teacherservice;
 
 import com.sagroup.teacherservice.Domain.*;
 import com.sagroup.teacherservice.Repository.TeacherRepository;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ import java.util.List;
 
 @SpringBootApplication
 @EnableDiscoveryClient
+@OpenAPIDefinition
 public class TeacherServiceApplication {
 
 	@Autowired
