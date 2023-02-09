@@ -9,11 +9,6 @@ spring:
     gateway:
       routes:
 
-
-
-
-
-
         - id: avatar-service
           uri: http://localhost:8087
           predicates:

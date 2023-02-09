@@ -12,7 +12,7 @@ spring:
       host: localhost
       port: 27017
 server:
-  port: 8086
+  port: 8088
 
 eureka:
   client:
