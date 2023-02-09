@@ -35,7 +35,7 @@ spring:
             - Path=/queries/rewards/**
 
         - id: school-service
-          -uri: http://localhost:8084
+          -uri: http://localhost:8093
           predicates:
             - Path=/schools/**
 
