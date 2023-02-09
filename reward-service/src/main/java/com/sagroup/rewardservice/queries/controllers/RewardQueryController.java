@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/queries/rewards")
-public class RewardRestController {
+public class RewardQueryController {
 
     private QueryGateway queryGateway;
 

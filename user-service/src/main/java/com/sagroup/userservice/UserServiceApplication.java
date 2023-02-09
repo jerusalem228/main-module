@@ -1,5 +1,6 @@
 package com.sagroup.userservice;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +15,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @SpringBootApplication
 @EnableMongoRepositories("com.sagroup.userservice.repository")
 @EnableDiscoveryClient
+@OpenAPIDefinition
 public class UserServiceApplication {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceApplication.class);

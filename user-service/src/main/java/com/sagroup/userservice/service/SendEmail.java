@@ -16,19 +16,15 @@ import javax.mail.Transport;
 
 
 @Service
-public class SendEmail
-
-{
-
-    @Value("${spring.mail.username}") private String sender;
+public class SendEmail {
+    @Value("${spring.mail.username}")
+    private String sender;
 
     @Autowired
     private JavaMailSender javaMailSender;
     public void sendMail(String username)
     {
-// Try block to check for exceptions
         try {
-
             // Creating a simple mail message
             SimpleMailMessage mailMessage = new SimpleMailMessage();
 
