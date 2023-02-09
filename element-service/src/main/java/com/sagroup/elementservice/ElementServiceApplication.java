@@ -1,5 +1,6 @@
 package com.sagroup.elementservice;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -11,6 +12,7 @@ import org.springframework.core.env.Environment;
 import com.sagroup.elementservice.config.ConfigFileExternalizationConfig;
 
 @SpringBootApplication
+@OpenAPIDefinition
 public class ElementServiceApplication {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ElementServiceApplication.class);

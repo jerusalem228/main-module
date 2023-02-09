@@ -13,10 +13,10 @@ import com.sagroup.elementservice.Dto.ElementDto;
 public interface ElementService {
     public ElementDto addElement(ElementDto elementDto);
 
-    public void removeElement(Long id);
+    public void removeElement(String id);
 
-    public ElementDto updateElement(Long id, ElementDto elementDto);
+    public ElementDto updateElement(String id, ElementDto elementDto);
 
-    public ElementDto viewElement(Long id);
+    public ElementDto viewElement(String id);
 
 }

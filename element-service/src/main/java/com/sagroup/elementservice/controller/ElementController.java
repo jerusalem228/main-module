@@ -16,32 +16,35 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
-@RequestMapping("/Element")
+@RequestMapping("/elements")
 public class ElementController {
-    @Autowired
     private ElementService elementService;
 
     @PostMapping
     public ResponseEntity<?> addElement(@RequestBody ElementDto elementDto){
-        elementService.addElement(elementDto);
-        return new ResponseEntity<>(elementDto, HttpStatus.OK);
+        return new ResponseEntity<>(elementService.addElement(elementDto), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> viewElement(@PathVariable Long id){
+    public ResponseEntity<?> viewElement(@PathVariable String id){
         ElementDto elementDto = elementService.viewElement(id);
         return new ResponseEntity<>(elementDto, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateElement( @PathVariable Long id, @RequestBody ElementDto elementDto){
+    public ResponseEntity<?> updateElement(@PathVariable String id, @RequestBody ElementDto elementDto){
         elementService.updateElement(id, elementDto);
         return new ResponseEntity<>(elementDto, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> removeElement(@PathVariable Long id){
+    public ResponseEntity<?> removeElement(@PathVariable String id){
         elementService.removeElement(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @Autowired
+    public void setElementService(ElementService elementService) {
+        this.elementService = elementService;
     }
 }
