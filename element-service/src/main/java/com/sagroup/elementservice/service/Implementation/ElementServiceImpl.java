@@ -18,10 +18,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class ElementServiceImpl implements ElementService {
-    @Autowired
     private ElementMapper elementMapper;
 
-    @Autowired
     private ElementRepository elementRepository;
 
     @Override
@@ -30,17 +28,17 @@ public class ElementServiceImpl implements ElementService {
         element.setElementType(elementDto.getElementType());
         element.setPrice(elementDto.getPrice());
         //Element element = elementMapper.elementFromElementDto(elementDto);
-        elementRepository.save(element);
-        return elementDto;
+        Element response = elementRepository.save(element);
+        return elementMapper.elementDtoFromElement(response);
     }
 
     @Override
-    public void removeElement(Long id) {
+    public void removeElement(String id) {
         elementRepository.deleteById(id);
     }
 
     @Override
-    public ElementDto updateElement(Long id, ElementDto elementDto) {
+    public ElementDto updateElement(String id, ElementDto elementDto) {
         Element element = elementMapper.elementFromElementDto(elementDto);
 
         elementRepository.save(element);
@@ -48,8 +46,18 @@ public class ElementServiceImpl implements ElementService {
     }
 
     @Override
-    public ElementDto viewElement(Long id) {
+    public ElementDto viewElement(String id) {
         Element element = elementRepository.findById(id).get();
         return elementMapper.elementDtoFromElement(element);
+    }
+
+    @Autowired
+    public void setElementMapper(ElementMapper elementMapper) {
+        this.elementMapper = elementMapper;
+    }
+
+    @Autowired
+    public void setElementRepository(ElementRepository elementRepository) {
+        this.elementRepository = elementRepository;
     }
 }

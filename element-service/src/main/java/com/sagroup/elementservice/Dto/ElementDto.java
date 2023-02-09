@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ElementDto {
+    private String id;
     private double price;
     private ElementType elementType;
 }

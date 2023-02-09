@@ -20,7 +20,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Element {
 
     @Id
-    private Long id;
+    private String id;
     private double price;
     private ElementType elementType;
 
