@@ -1,6 +1,6 @@
 spring:
   application:
-    name: avatar-service
+    name: student-service
   cloud:
     config:
       server:

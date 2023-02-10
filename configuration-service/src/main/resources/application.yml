@@ -3,6 +3,8 @@ spring:
     name: configuration-service
     description:
 
+
+
   # data:
   #   mongodb:
   #     uri: "mongodb://localhost:27017"
@@ -10,4 +12,6 @@ spring:
   #     host: localhost
   #     port: 27017
 server:
-  port: 8088
+  port: 8082
+
+
